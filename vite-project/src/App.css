@@ -947,14 +947,53 @@
   border-radius: 12px;
 }
 
+.cert-img-container {
+  margin-bottom: 1.5rem;
+}
+
 .cert-img {
   width: 100%;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
+}
+
+.cert-preview {
+  min-height: 260px;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(135deg, rgba(0, 224, 255, 0.16), rgba(255, 255, 255, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cert-preview-type {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.35rem 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(0, 224, 255, 0.16);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cert-preview-title {
+  margin: 0;
+  font-size: 1.7rem;
+  line-height: 1.2;
 }
 
 .cert-info {
   padding: 0 1rem 1rem;
+}
+
+.cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* Contact Styles */
