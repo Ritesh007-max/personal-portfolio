@@ -1,6 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
+import resumeFile from '../assets/Resume.pdf';
 
 const Hero = () => {
+    const socialLinks = [
+        {
+            label: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/ritesh-gabale-59a2b5365/',
+            icon: FaLinkedinIn
+        },
+        {
+            label: 'LeetCode',
+            href: 'https://leetcode.com/u/Riteshgabale/',
+            icon: SiLeetcode
+        },
+        {
+            label: 'YouTube',
+            href: 'https://www.youtube.com/channel/UCvUx30QhPrjk0KUu4M0ILvA',
+            icon: FaYoutube
+        },
+        {
+            label: 'GitHub',
+            href: 'https://github.com/Ritesh007-max',
+            icon: FaGithub
+        }
+    ];
+
     const roles = [
         'MERN Stack Developer',
         'DSA Enthusiast',
@@ -49,7 +75,22 @@ const Hero = () => {
                 <h1 className="hero-title">Building <span className="gradient-text">Things That Matter!</span></h1>
                 <div className="hero-buttons">
                     <a href="#projects" className="glow-btn hero-btn">View Projects</a>
-                    <a href="#resume" className="hero-btn-outline">Download Resume</a>
+                    <a href={resumeFile} target="_blank" rel="noreferrer" className="hero-btn-outline">Download Resume</a>
+                </div>
+                <div className="hero-social-links" aria-label="Social links">
+                    {socialLinks.map((link) => (
+                        <a
+                            key={link.label}
+                            href={link.href}
+                            className="hero-social-icon"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={link.label}
+                            title={link.label}
+                        >
+                            <link.icon aria-hidden="true" />
+                        </a>
+                    ))}
                 </div>
             </div>
             <div className="hero-scroll-indicator">

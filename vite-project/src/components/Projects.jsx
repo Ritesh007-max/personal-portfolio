@@ -11,25 +11,33 @@ const Projects = () => {
             title: 'FreeCodeCamp Clone',
             tech: 'HTML, CSS',
             image: fccImage,
-            live: 'https://freecodecampcloneritesh.netlify.app'
+            live: 'https://freecodecampcloneritesh.netlify.app',
+            youtube: 'https://youtu.be/duv6nKuZg90?si=zjhBF4xjmxFAb7lb',
+            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/FreeCodeCampClone'
         },
         {
             title: 'Fellow Coffee Clone',
             tech: 'HTML, CSS',
             image: coffeeImage,
-            live: 'https://fellowcoffeeclone.netlify.app'
+            live: 'https://fellowcoffeeclone.netlify.app',
+            youtube: 'https://youtu.be/832OW7iiAFM?si=E8WRszEh3b4U6_ha',
+            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/fellowCoffeeClone'
         },
         {
             title: 'Crypto Zombies Clone',
             tech: 'HTML, CSS',
             image: cryptoImage,
-            live: 'https://cryptozombiesclone.netlify.app'
+            live: 'https://cryptozombiesclone.netlify.app',
+            youtube: 'https://youtu.be/GC7L55bbaWA?si=2-YH-U_O8hUt4f48',
+            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/CryptoZombiesClone'
         },
         {
             title: 'KeyChrone Clone',
             tech: 'HTML, CSS',
             image: keyboardImage,
-            live: 'https://keychroneclone.netlify.app'
+            live: 'https://keychroneclone.netlify.app',
+            youtube: 'https://youtu.be/f8st0ZfKWW4?si=rNTCPACOemNtDnD7',
+            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/KeyChrone.conClone'
         },
         {
             title: 'Project Euler Clone',
@@ -41,7 +49,9 @@ const Projects = () => {
             title: 'SuperRare Clone',
             tech: 'HTML, CSS',
             image: rareImage,
-            live: 'https://superrareclone.netlify.app'
+            live: 'https://superrareclone.netlify.app',
+            youtube: 'https://youtu.be/4ECe2bWKeG0?si=inmLWtfN7xX3uLA0',
+            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/SuperRareClone'
         }
     ];
 
@@ -58,7 +68,15 @@ const Projects = () => {
                             <h3 className="project-title">{project.title}</h3>
                             <p className="project-tech">{project.tech}</p>
                             <div className="project-links">
-                                <a href={project.live} className="live-link" target="_blank" rel="noreferrer">Live</a>
+                                {project.live && (
+                                    <a href={project.live} className="live-link" target="_blank" rel="noreferrer">Live</a>
+                                )}
+                                {project.youtube && (
+                                    <a href={project.youtube} className="code-link" target="_blank" rel="noreferrer">YouTube</a>
+                                )}
+                                {project.github && (
+                                    <a href={project.github} className="code-link" target="_blank" rel="noreferrer">GitHub</a>
+                                )}
                             </div>
                         </div>
                     </div>

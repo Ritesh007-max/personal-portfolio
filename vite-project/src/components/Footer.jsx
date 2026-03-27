@@ -2,6 +2,7 @@ import React from 'react';
 
 const socialLinks = [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ritesh-gabale-59a2b5365/' },
+    { label: 'GitHub', href: 'https://github.com/Ritesh007-max' },
     { label: 'LeetCode', href: 'https://leetcode.com/u/Riteshgabale/' },
     { label: 'YouTube', href: 'https://www.youtube.com/channel/UCvUx30QhPrjk0KUu4M0ILvA' },
     { label: 'Email', href: 'https://mail.google.com/mail/u/0/#inbox' }
