@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { SiLeetcode } from 'react-icons/si';
 import resumeFile from '../assets/Resume.pdf';
 
@@ -19,6 +20,11 @@ const Hero = () => {
             label: 'YouTube',
             href: 'https://www.youtube.com/channel/UCvUx30QhPrjk0KUu4M0ILvA',
             icon: FaYoutube
+        },
+        {
+            label: 'X',
+            href: 'https://x.com/RiteshGabale007',
+            icon: FaXTwitter
         },
         {
             label: 'GitHub',
