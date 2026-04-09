@@ -1004,6 +1004,50 @@
 }
 
 /* Certifications Layout */
+.cert-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.cert-toggle-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cert-toggle-btn:hover {
+  border-color: rgba(0, 242, 254, 0.5);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.cert-toggle-btn.active {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.18), rgba(79, 172, 254, 0.18));
+  border-color: rgba(0, 242, 254, 0.55);
+  color: var(--text-primary);
+  box-shadow: 0 0 24px rgba(0, 242, 254, 0.12);
+}
+
+.cert-section-label {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1067,6 +1111,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+@media (max-width: 680px) {
+  .cert-toggle {
+    gap: 0.65rem;
+  }
+
+  .cert-toggle-btn {
+    width: 100%;
+  }
 }
 
 /* Contact Styles */
