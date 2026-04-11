@@ -1,4 +1,5 @@
 import React from 'react';
+import ExternalButton from './ExternalButton';
 
 const socialLinks = [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ritesh-gabale-59a2b5365/' },
@@ -15,9 +16,14 @@ const Footer = () => {
                 <p className="copyright-text">(c) 2024 Ritesh Gabale - Built with React</p>
                 <div className="social-links">
                     {socialLinks.map((link) => (
-                        <a key={link.label} href={link.href} className="social-icon" target="_blank" rel="noreferrer">
+                        <ExternalButton
+                            key={link.label}
+                            href={link.href}
+                            className="social-icon"
+                            ariaLabel={link.label}
+                        >
                             {link.label}
-                        </a>
+                        </ExternalButton>
                     ))}
                 </div>
             </div>

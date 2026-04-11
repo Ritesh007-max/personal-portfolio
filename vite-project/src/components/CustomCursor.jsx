@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 
 const INTERACTIVE_ELEMENTS = 'a, button, input, textarea, [role="button"], .project-card, .cert-card, .skill-cyber-card, .project-card-tab, .skill-icon-cyber';
+const CursorFollower = motion.div;
+const CursorDot = motion.div;
 
 const CustomCursor = () => {
     const [isHovering, setIsHovering] = useState(false);
@@ -59,7 +61,7 @@ const CustomCursor = () => {
     return (
         <div className="cursor-wrapper" style={{ opacity: isVisible ? 1 : 0 }}>
             {/* Synchronized Orbital Arcs */}
-            <motion.div
+            <CursorFollower
                 className={`cursor-follower ${isHovering ? 'hovering' : ''} ${isPressed ? 'pressed' : ''}`}
                 animate={{
                     scale: isPressed ? 0.5 : isHovering ? 1.5 : 1,
@@ -74,10 +76,10 @@ const CustomCursor = () => {
                 <div className="cursor-arc arc-1"></div>
                 <div className="cursor-arc arc-2"></div>
                 <div className="cursor-arc arc-3"></div>
-            </motion.div>
+            </CursorFollower>
 
             {/* Absolute center dot (moving in perfect sync) */}
-            <motion.div
+            <CursorDot
                 className={`cursor-dot ${isPressed ? 'pressed' : ''}`}
                 animate={{
                     scale: isPressed ? 0.4 : 1,

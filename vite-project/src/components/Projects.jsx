@@ -6,9 +6,11 @@ import keyboardImage from '../assets/KeyChroneClone_.png';
 import rareImage from '../assets/SuperRareClone_.png';
 import resumeParserThumb from '../assets/hackathon-resume-parser.png';
 import cropPilotThumb from '../assets/Crop_Poilet.png';
+import ExternalButton from './ExternalButton';
 
 const Projects = () => {
     const [activeSection, setActiveSection] = useState('personal');
+    const [showAllProjects, setShowAllProjects] = useState(false);
 
     const personalProjects = [
         {
@@ -85,6 +87,8 @@ const Projects = () => {
     ];
 
     const activeProjects = activeSection === 'personal' ? personalProjects : hackathonProjects;
+    const visibleProjects = showAllProjects ? activeProjects : activeProjects.slice(0, 2);
+    const canViewAll = activeProjects.length > 2;
 
     return (
         <section id="projects" className="section container projects-section">
@@ -93,7 +97,10 @@ const Projects = () => {
                 <button
                     type="button"
                     className={`cert-toggle-btn ${activeSection === 'personal' ? 'active' : ''}`}
-                    onClick={() => setActiveSection('personal')}
+                    onClick={() => {
+                        setActiveSection('personal');
+                        setShowAllProjects(false);
+                    }}
                     aria-pressed={activeSection === 'personal'}
                 >
                     Personal Projects
@@ -101,7 +108,10 @@ const Projects = () => {
                 <button
                     type="button"
                     className={`cert-toggle-btn ${activeSection === 'hackathon' ? 'active' : ''}`}
-                    onClick={() => setActiveSection('hackathon')}
+                    onClick={() => {
+                        setActiveSection('hackathon');
+                        setShowAllProjects(false);
+                    }}
                     aria-pressed={activeSection === 'hackathon'}
                 >
                     Hackathon Projects
@@ -113,7 +123,7 @@ const Projects = () => {
             </div>
 
             <div className="cert-grid">
-                {activeProjects.map((project) => (
+                {visibleProjects.map((project) => (
                     <article key={project.title} className="cert-card glass project-card-tab">
                         <div className="project-media" tabIndex={0} aria-label={`${project.title} summary`}>
                             <img
@@ -135,25 +145,37 @@ const Projects = () => {
                             <p className="project-tech">{project.tech}</p>
                             <div className="project-links">
                                 {project.live && (
-                                    <a href={project.live} className="live-link" target="_blank" rel="noreferrer">
+                                    <ExternalButton href={project.live} className="live-link" ariaLabel={`${project.title} live demo`}>
                                         Live
-                                    </a>
+                                    </ExternalButton>
                                 )}
                                 {project.youtube && (
-                                    <a href={project.youtube} className="code-link" target="_blank" rel="noreferrer">
+                                    <ExternalButton href={project.youtube} className="code-link" ariaLabel={`${project.title} YouTube video`}>
                                         YouTube
-                                    </a>
+                                    </ExternalButton>
                                 )}
                                 {project.github && (
-                                    <a href={project.github} className="code-link" target="_blank" rel="noreferrer">
+                                    <ExternalButton href={project.github} className="code-link" ariaLabel={`${project.title} GitHub repository`}>
                                         GitHub
-                                    </a>
+                                    </ExternalButton>
                                 )}
                             </div>
                         </div>
                     </article>
                 ))}
             </div>
+
+            {canViewAll && (
+                <div className="projects-actions">
+                    <button
+                        type="button"
+                        className="glow-btn projects-view-all-btn"
+                        onClick={() => setShowAllProjects((prev) => !prev)}
+                    >
+                        {showAllProjects ? 'Show Less' : 'View All'}
+                    </button>
+                </div>
+            )}
         </section>
     );
 };

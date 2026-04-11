@@ -40,7 +40,7 @@ const Contact = () => {
                 type: 'success',
                 message: 'Message sent successfully. You should receive it at riteshworking247@gmail.com.'
             });
-        } catch (error) {
+        } catch {
             setStatus({
                 type: 'error',
                 message: 'Message could not be sent. Check your EmailJS template configuration and try again.'

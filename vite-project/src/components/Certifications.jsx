@@ -4,6 +4,7 @@ import scientificPythonImg from '../assets/Scientific Computing With Python.png'
 import sangamHackathonImg from '../assets/SU_Certificate.jpeg';
 import mosipHackathonImg from '../assets/MOSIP Decoded.png';
 import appianChallengeImg from '../assets/Appian.png';
+import ExternalButton from './ExternalButton';
 
 const Certifications = () => {
     const [activeSection, setActiveSection] = useState('learning');
@@ -95,7 +96,9 @@ const Certifications = () => {
                             <p className="cert-issuer">{cert.issuer}</p>
                             <p className="cert-date">{cert.date}</p>
                             <div className="cert-actions">
-                                <a href={cert.link} className="glow-btn cert-btn" target="_blank" rel="noreferrer">View Credential</a>
+                                <ExternalButton href={cert.link} className="glow-btn cert-btn" ariaLabel={`View credential for ${cert.title}`}>
+                                    View Credential
+                                </ExternalButton>
                             </div>
                         </div>
                     </div>

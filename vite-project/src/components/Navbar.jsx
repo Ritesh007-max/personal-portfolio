@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
 const Navbar = () => {
@@ -13,26 +14,36 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Certifications', href: '#certifications' },
+        { name: 'Home', to: '/' },
+        { name: 'About', to: '/about' },
+        { name: 'Skills', to: '/skills' },
+        { name: 'Projects', to: '/projects' },
+        { name: 'Certifications', to: '/certifications' },
     ];
 
     return (
         <nav className={`fixed-navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container nav-container">
-                <a href="#home" className="logo">
+                <Link to="/" className="logo" aria-label="Home">
                     <img src={logo} alt="Logo" />
-                </a>
+                </Link>
                 <div className="nav-links">
                     {navLinks.map((link) => (
-                        <a key={link.name} href={link.href} className="nav-link">
+                        <NavLink
+                            key={link.name}
+                            to={link.to}
+                            end={link.to === '/'}
+                            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        >
                             {link.name}
-                        </a>
+                        </NavLink>
                     ))}
-                    <a href="#contact" className="glow-btn nav-cta">Let's Talk</a>
+                    <NavLink
+                        to="/contact"
+                        className={({ isActive }) => `glow-btn nav-cta ${isActive ? 'active' : ''}`}
+                    >
+                        Let's Talk
+                    </NavLink>
                 </div>
             </div>
         </nav>

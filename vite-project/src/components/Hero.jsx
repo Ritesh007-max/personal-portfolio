@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiLeetcode } from 'react-icons/si';
 import resumeFile from '../assets/Resume.pdf';
+import ExternalButton from './ExternalButton';
+
+const roles = [
+    'MERN Stack Developer',
+    'DSA Enthusiast',
+    'Web Developer',
+    'Figma Designer',
+    'Open Source Contributor'
+];
 
 const Hero = () => {
     const socialLinks = [
@@ -33,14 +43,6 @@ const Hero = () => {
         }
     ];
 
-    const roles = [
-        'MERN Stack Developer',
-        'DSA Enthusiast',
-        'Web Developer',
-        'Figma Designer',
-        'Open Source Contributor'
-    ];
-
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -68,7 +70,7 @@ const Hero = () => {
 
         const timer = setTimeout(handleTyping, typingSpeed);
         return () => clearTimeout(timer);
-    }, [currentText, isDeleting, currentRoleIndex, roles, typingSpeed]);
+    }, [currentText, isDeleting, currentRoleIndex, typingSpeed]);
 
     return (
         <section id="home" className="hero">
@@ -80,22 +82,22 @@ const Hero = () => {
                 </h3>
                 <h1 className="hero-title">Building <span className="gradient-text">Things That Matter!</span></h1>
                 <div className="hero-buttons">
-                    <a href="#projects" className="glow-btn hero-btn">View Projects</a>
-                    <a href={resumeFile} target="_blank" rel="noreferrer" className="hero-btn-outline">Download Resume</a>
+                    <Link to="/projects" className="glow-btn hero-btn">View Projects</Link>
+                    <ExternalButton href={resumeFile} className="hero-btn-outline">
+                        Download Resume
+                    </ExternalButton>
                 </div>
                 <div className="hero-social-links" aria-label="Social links">
                     {socialLinks.map((link) => (
-                        <a
+                        <ExternalButton
                             key={link.label}
-                            href={link.href}
                             className="hero-social-icon"
-                            target="_blank"
-                            rel="noreferrer"
                             aria-label={link.label}
                             title={link.label}
+                            href={link.href}
                         >
                             <link.icon aria-hidden="true" />
-                        </a>
+                        </ExternalButton>
                     ))}
                 </div>
             </div>

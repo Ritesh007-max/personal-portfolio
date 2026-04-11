@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ritesh-portfolio-v05.netlify.app/sitemap.xml

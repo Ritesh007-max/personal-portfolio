@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
+const MotionDiv = motion.div;
+
 const directions = {
     up: { x: 0, y: 36 },
     down: { x: 0, y: -36 },
@@ -13,7 +15,7 @@ const SectionReveal = ({ children, delay = 0, direction = 'up' }) => {
     const offset = directions[direction] ?? directions.up;
 
     return (
-        <motion.div
+        <MotionDiv
             className="section-reveal"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.985, ...offset }}
             whileInView={shouldReduceMotion ? {} : { opacity: 1, scale: 1, x: 0, y: 0 }}
@@ -25,7 +27,7 @@ const SectionReveal = ({ children, delay = 0, direction = 'up' }) => {
             }}
         >
             {children}
-        </motion.div>
+        </MotionDiv>
     );
 };
 

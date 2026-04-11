@@ -1,5 +1,6 @@
 import React from 'react';
 import profileImg from '../assets/profile.jpg';
+import ExternalButton from './ExternalButton';
 
 const About = () => {
     return (
@@ -32,15 +33,14 @@ const About = () => {
                             <span className="stat-number gradient-text">500+</span>
                             <p className="stat-label">Code Commits</p>
                         </div>
-                        <a
+                        <ExternalButton
                             href="https://leetcode.com/u/Riteshgabale/"
                             className="stat-card stat-card-link"
-                            target="_blank"
-                            rel="noreferrer"
+                            ariaLabel="Open LeetCode profile"
                         >
                             <span className="stat-number gradient-text">Regular</span>
                             <p className="stat-label">On LeetCode</p>
-                        </a>
+                        </ExternalButton>
                     </div>
                 </div>
             </div>

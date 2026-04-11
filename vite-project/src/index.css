@@ -17,6 +17,8 @@
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  --section-max-width: 980px;
+  --section-side-padding: clamp(0.45rem, 1vw, 0.75rem);
 }
 
 * {
@@ -69,19 +71,20 @@ h5 {
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--section-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-inline: var(--section-side-padding);
 }
 
 .section {
-  padding: 6rem 0;
+  padding: clamp(3.5rem, 5vw, 4.75rem) 0;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
   color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -135,6 +138,22 @@ h5 {
   background: var(--primary);
   color: var(--bg-darker);
   box-shadow: 0 0 20px var(--accent-glow);
+}
+
+button.glow-btn,
+button.hero-btn-outline,
+button.hero-social-icon,
+button.social-icon,
+button.live-link,
+button.code-link,
+button.cert-btn,
+button.stat-card-link {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
 }
 
 .gradient-text {
