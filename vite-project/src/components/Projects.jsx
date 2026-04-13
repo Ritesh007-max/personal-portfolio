@@ -6,6 +6,7 @@ import keyboardImage from '../assets/KeyChroneClone_.png';
 import rareImage from '../assets/SuperRareClone_.png';
 import resumeParserThumb from '../assets/hackathon-resume-parser.png';
 import cropPilotThumb from '../assets/Crop_Poilet.png';
+import fleetFlowThumb from '../assets/FleetFlow.jpeg';
 import ExternalButton from './ExternalButton';
 
 const Projects = () => {
@@ -73,6 +74,7 @@ const Projects = () => {
             tech: 'Resume parsing, structured extraction',
             image: resumeParserThumb,
             summary: 'A resume parsing prototype that extracts key candidate details and turns them into structured information for faster review.',
+            contributors: ['Dhruv Ozha', 'Mahi Patel', 'Maharshi Patel'],
             live: 'https://iisc-hack.vercel.app/',
             github: 'https://github.com/Ritesh007-max/IISC_Hack_ResumeParser'
         },
@@ -81,8 +83,18 @@ const Projects = () => {
             tech: 'Crop support, decision workflow',
             image: cropPilotThumb,
             summary: 'A crop guidance concept built around a simple digital workflow for exploring practical agricultural information.',
+            contributors: ['Dhruv Ozha', 'Mahi Patel', 'Maharshi Patel'],
             live: 'https://croppilot-su.vercel.app/',
             github: 'https://github.com/Ritesh007-max/SU_HACK_CropPiolet'
+        },
+        {
+            title: 'FleetFlow - Global Fleet Command & Intelligence',
+            tech: 'React, Vite, Tailwind, dashboard analytics',
+            image: fleetFlowThumb,
+            summary: 'A modern fleet management dashboard for real-time transportation operations, with fleet utilization tracking, driver availability, dispatch control, expense analytics, maintenance logs, and a live manifest view.',
+            contributors: ['Hemang Solanki', 'Mahi Patel', 'Maharshi Patel'],
+            live: 'https://fleet-flow-coding-gita.netlify.app/',
+            github: 'https://github.com/Ritesh007-max/Fleet_Flow',
         }
     ];
 
@@ -126,12 +138,28 @@ const Projects = () => {
                 {visibleProjects.map((project) => (
                     <article key={project.title} className="cert-card glass project-card-tab">
                         <div className="project-media" tabIndex={0} aria-label={`${project.title} summary`}>
-                            <img
-                                src={project.image}
-                                alt={`${project.title} thumbnail`}
-                                className="project-thumb"
-                                loading="lazy"
-                            />
+                            {project.image ? (
+                                <img
+                                    src={project.image}
+                                    alt={`${project.title} thumbnail`}
+                                    className="project-thumb"
+                                    loading="lazy"
+                                />
+                            ) : (
+                                <div className="project-thumb project-thumb-fallback">
+                                    <span className="project-fallback-label">
+                                        {project.previewLabel || 'Project preview'}
+                                    </span>
+                                    <h3 className="project-fallback-title">{project.title}</h3>
+                                    <div className="project-fallback-lines">
+                                        {(project.previewLines || []).map((line) => (
+                                            <span key={line} className="project-fallback-line">
+                                                {line}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                             <div className="project-summary-overlay">
                                 <span className="project-hover-kicker">Project summary</span>
                                 <p className="project-summary">{project.summary}</p>
@@ -143,19 +171,43 @@ const Projects = () => {
                             </span>
                             <h3 className="project-title">{project.title}</h3>
                             <p className="project-tech">{project.tech}</p>
+                            {project.contributors && (
+                                <div className="project-contributors">
+                                    <span className="project-contributors-label">Contributors</span>
+                                    <div className="project-contributors-list">
+                                        {project.contributors.map((name) => (
+                                            <span key={name} className="project-contributor-chip">
+                                                {name}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                             <div className="project-links">
                                 {project.live && (
-                                    <ExternalButton href={project.live} className="live-link" ariaLabel={`${project.title} live demo`}>
+                                    <ExternalButton
+                                        href={project.live}
+                                        className="glow-btn project-link-btn project-link-primary"
+                                        ariaLabel={`${project.title} live demo`}
+                                    >
                                         Live
                                     </ExternalButton>
                                 )}
                                 {project.youtube && (
-                                    <ExternalButton href={project.youtube} className="code-link" ariaLabel={`${project.title} YouTube video`}>
+                                    <ExternalButton
+                                        href={project.youtube}
+                                        className="glow-btn project-link-btn project-link-secondary"
+                                        ariaLabel={`${project.title} YouTube video`}
+                                    >
                                         YouTube
                                     </ExternalButton>
                                 )}
                                 {project.github && (
-                                    <ExternalButton href={project.github} className="code-link" ariaLabel={`${project.title} GitHub repository`}>
+                                    <ExternalButton
+                                        href={project.github}
+                                        className="glow-btn project-link-btn project-link-secondary"
+                                        ariaLabel={`${project.title} GitHub repository`}
+                                    >
                                         GitHub
                                     </ExternalButton>
                                 )}

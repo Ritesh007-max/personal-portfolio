@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SectionReveal from './components/SectionReveal';
 import CustomCursor from './components/CustomCursor';
+import Seo from './components/Seo';
 import './App.css';
 
 const ScrollToTop = () => {
@@ -31,8 +32,27 @@ const PageLayout = ({ children }) => (
   </div>
 );
 
+const RoutePage = ({ title, description, children, direction = 'up', delay = 0 }) => (
+  <>
+    <Seo title={title} description={description} />
+    <PageLayout>
+      <SectionRoute direction={direction} delay={delay}>
+        {children}
+      </SectionRoute>
+    </PageLayout>
+  </>
+);
+
+const HomePageSeo = () => (
+  <Seo
+    title="Ritesh Gabale | Portfolio"
+    description="Ritesh Gabale's portfolio featuring web projects, hackathon work, certifications, skills, and contact details."
+  />
+);
+
 const HomePage = () => (
   <>
+    <HomePageSeo />
     <SectionReveal direction="up">
       <Hero />
     </SectionReveal>
@@ -76,51 +96,61 @@ function App() {
         <Route
           path="/about"
           element={
-            <PageLayout>
-              <SectionRoute direction="left">
-                <About />
-              </SectionRoute>
-            </PageLayout>
+            <RoutePage
+              title="About | Ritesh Gabale Portfolio"
+              description="Learn more about Ritesh Gabale, a MERN stack developer focused on responsive web interfaces, full-stack growth, and collaborative work."
+              direction="left"
+            >
+              <About />
+            </RoutePage>
           }
         />
         <Route
           path="/skills"
           element={
-            <PageLayout>
-              <SectionRoute direction="right">
-                <Skills />
-              </SectionRoute>
-            </PageLayout>
+            <RoutePage
+              title="Skills | Ritesh Gabale Portfolio"
+              description="Explore Ritesh Gabale's front-end, back-end, deployment, design, and problem-solving skills."
+              direction="right"
+            >
+              <Skills />
+            </RoutePage>
           }
         />
         <Route
           path="/projects"
           element={
-            <PageLayout>
-              <SectionRoute direction="left">
-                <Projects />
-              </SectionRoute>
-            </PageLayout>
+            <RoutePage
+              title="Projects | Ritesh Gabale Portfolio"
+              description="Browse Ritesh Gabale's personal projects and hackathon projects, including clones, dashboards, and web apps."
+              direction="left"
+            >
+              <Projects />
+            </RoutePage>
           }
         />
         <Route
           path="/certifications"
           element={
-            <PageLayout>
-              <SectionRoute direction="right">
-                <Certifications />
-              </SectionRoute>
-            </PageLayout>
+            <RoutePage
+              title="Certifications | Ritesh Gabale Portfolio"
+              description="View Ritesh Gabale's learning certifications and hackathon achievements."
+              direction="right"
+            >
+              <Certifications />
+            </RoutePage>
           }
         />
         <Route
           path="/contact"
           element={
-            <PageLayout>
-              <SectionRoute direction="up">
-                <Contact />
-              </SectionRoute>
-            </PageLayout>
+            <RoutePage
+              title="Contact | Ritesh Gabale Portfolio"
+              description="Get in touch with Ritesh Gabale through the contact form for collaboration, freelance work, or project discussions."
+              direction="up"
+            >
+              <Contact />
+            </RoutePage>
           }
         />
         <Route path="*" element={<Navigate to="/" replace />} />

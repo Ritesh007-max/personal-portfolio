@@ -144,16 +144,17 @@ button.glow-btn,
 button.hero-btn-outline,
 button.hero-social-icon,
 button.social-icon,
-button.live-link,
-button.code-link,
 button.cert-btn,
 button.stat-card-link {
   appearance: none;
   -webkit-appearance: none;
-  border: none;
-  background: none;
   cursor: pointer;
   font: inherit;
+}
+
+button.glow-btn {
+  border: 1px solid var(--primary);
+  background: transparent;
 }
 
 .gradient-text {
