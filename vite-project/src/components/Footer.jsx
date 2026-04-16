@@ -6,14 +6,16 @@ const socialLinks = [
     { label: 'GitHub', href: 'https://github.com/Ritesh007-max' },
     { label: 'LeetCode', href: 'https://leetcode.com/u/Riteshgabale/' },
     { label: 'YouTube', href: 'https://www.youtube.com/channel/UCvUx30QhPrjk0KUu4M0ILvA' },
-    { label: 'Email', href: 'https://mail.google.com/mail/u/0/#inbox' }
+    { label: 'Email', href: 'mailto:riteshworking247@gmail.com' }
 ];
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="footer container">
             <div className="footer-content">
-                <p className="copyright-text">(c) 2024 Ritesh Gabale - Built with React</p>
+                <p className="copyright-text">(c) {currentYear} Ritesh Gabale - Built with React</p>
                 <div className="social-links">
                     {socialLinks.map((link) => (
                         <ExternalButton
@@ -21,6 +23,8 @@ const Footer = () => {
                             href={link.href}
                             className="social-icon"
                             ariaLabel={link.label}
+                            target={link.label === 'Email' ? '_self' : '_blank'}
+                            rel={link.label === 'Email' ? undefined : 'noopener noreferrer'}
                         >
                             {link.label}
                         </ExternalButton>

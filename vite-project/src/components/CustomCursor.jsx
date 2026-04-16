@@ -23,7 +23,7 @@ const CustomCursor = () => {
         window.addEventListener('resize', checkTouch);
 
         const handlePointerMove = (e) => {
-            if (!isVisible) setIsVisible(true);
+            setIsVisible(true);
             posX.set(e.clientX);
             posY.set(e.clientY);
 
@@ -54,7 +54,7 @@ const CustomCursor = () => {
             document.body.removeEventListener('pointerleave', handlePointerLeave);
             document.body.removeEventListener('pointerenter', handlePointerEnter);
         };
-    }, [isVisible, posX, posY]);
+    }, [posX, posY]);
 
     if (isTouchDevice) return null;
 

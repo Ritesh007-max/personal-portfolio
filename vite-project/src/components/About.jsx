@@ -11,23 +11,24 @@ const About = () => {
           <div className="profile-glow"></div>
           <img
             src={profileImg}
-            alt="Ritesh.R.Gabale"
+            alt="Ritesh R. Gabale"
             className="profile-image"
           />
         </div>
         <div className="about-details">
-          <h1 className="about-name">Ritesh.R.Gabale</h1>
+          <h1 className="about-name">Ritesh R. Gabale</h1>
           <p className="about-title gradient-text">
-            Full Stack MERN Developer
+            MERN Stack Developer
           </p>
           <p className="about-text">
             I'm a <span className="highlight-text">front-end developer</span>{" "}
-            and final-year student at Coding Site, Ahmedabad, specializing in
-            building responsive web interfaces. Currently expanding into
-            full-stack development with Node and Express. I am proficient in
-            Git, GitHub, and Figma. I am a collaborative team player and
-            effective communicator dedicated to building impactful digital
-            solutions.
+            and final-year student at Coding Site, Ahmedabad, focused on
+            building responsive web interfaces with clean structure and sharp
+            visual hierarchy. I am currently expanding deeper into full-stack
+            development with Node and Express, and I work comfortably with Git,
+            GitHub, and Figma. I bring a collaborative mindset, clear
+            communication, and a strong bias toward shipping thoughtful digital
+            experiences.
           </p>
           <div className="about-stats">
             <div className="stat-card">
@@ -43,7 +44,7 @@ const About = () => {
               className="stat-card stat-card-link"
               ariaLabel="Open LeetCode profile"
             >
-              <span className="stat-number gradient-text">Regular</span>
+              <span className="stat-number gradient-text">Active</span>
               <p className="stat-label">On LeetCode</p>
             </ExternalButton>
           </div>

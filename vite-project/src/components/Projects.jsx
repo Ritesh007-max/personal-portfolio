@@ -42,13 +42,13 @@ const Projects = () => {
             github: 'https://github.com/Ritesh007-max/myProjects/tree/main/CryptoZombiesClone'
         },
         {
-            title: 'KeyChrone Clone',
+            title: 'Keychron Clone',
             tech: 'HTML, CSS',
             image: keyboardImage,
             summary: 'A keyboard showcase clone centered on modular card design and desktop-first presentation.',
             live: 'https://keychroneclone.netlify.app',
             youtube: 'https://youtu.be/f8st0ZfKWW4?si=rNTCPACOemNtDnD7',
-            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/KeyChrone.conClone'
+            github: 'https://github.com/Ritesh007-max/myProjects/tree/main/KeyChroneClone'
         },
         {
             title: 'Project Euler Clone',

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import illustration from '../assets/undraw_personal-text_090t.svg';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -63,6 +64,7 @@ const Contact = () => {
                         required
                         className="form-input"
                         minLength="2"
+                        autoComplete="name"
                     />
                     <input
                         type="email"
@@ -70,6 +72,7 @@ const Contact = () => {
                         placeholder="Your Email"
                         required
                         className="form-input"
+                        autoComplete="email"
                     />
                     <textarea
                         name="message"
@@ -78,21 +81,27 @@ const Contact = () => {
                         className="form-textarea"
                         rows="5"
                         minLength="10"
+                        autoComplete="off"
                     ></textarea>
                     <button type="submit" className="glow-btn submit-btn" disabled={isSending}>
                         {isSending ? 'Sending...' : 'Send Message'}
                     </button>
                     {status.message ? (
-                        <p className={`form-status ${status.type === 'success' ? 'success' : 'error'}`}>
+                        <p
+                            className={`form-status ${status.type === 'success' ? 'success' : 'error'}`}
+                            aria-live="polite"
+                        >
                             {status.message}
                         </p>
                     ) : null}
                 </form>
                 <div className="contact-illustration">
                     <img
-                        src="https://ritesh-portfoliov04.netlify.app/undraw_personal-text_090t.svg"
-                        alt="Contact Illustration"
+                        src={illustration}
+                        alt="Illustration of a person sending a message"
                         className="illustration-img shadow-neon"
+                        loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </div>

@@ -28,8 +28,8 @@ const Certifications = () => {
 
   const hackathonCertifications = [
     {
-      title: "3rd Position in a all-India Hackathon",
-      issuer: "Sangam University, Rajsthan",
+      title: "3rd Place in an All-India Hackathon",
+      issuer: "Sangam University, Rajasthan",
       date: "March 2026",
       image: sangamHackathonImg,
       link: sangamHackathonImg,
@@ -37,14 +37,14 @@ const Certifications = () => {
     {
       title: "MOSIP Decode Hackathon",
       issuer: "Unstop",
-      date: "Certificate",
+      date: "2026",
       image: mosipHackathonImg,
       link: "https://unstop.com/certificate-preview/3f6efc05-ffc4-47c0-b7f8-25c8f5d2744e",
     },
     {
       title: "Appian AI Challenge",
       issuer: "Unstop",
-      date: "Certificate",
+      date: "2026",
       image: appianChallengeImg,
       link: "https://unstop.com/certificate-preview/f3c457b8-dc89-4775-9371-11fb536ceba7",
     },

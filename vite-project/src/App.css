@@ -337,6 +337,45 @@
   transform: translateY(-2px);
 }
 
+.hero-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.4rem;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.scroll-arrow {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  transform: rotate(45deg);
+  animation: scroll-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateY(8px) rotate(45deg);
+    opacity: 1;
+  }
+}
+
 /* About Section */
 .about-wrapper {
   display: grid;
@@ -411,6 +450,11 @@
   color: var(--text-secondary);
   font-size: 1rem;
   margin-bottom: 2.5rem;
+}
+
+.highlight-text {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .about-stats {
@@ -1238,6 +1282,12 @@
   gap: 1rem;
 }
 
+.cert-issuer,
+.cert-date {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
 @media (max-width: 680px) {
   .cert-toggle {
     gap: 0.65rem;
@@ -1308,6 +1358,15 @@
 .footer {
   padding: 3rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.shadow-neon {
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.14);
 }
 
 .footer-content {
