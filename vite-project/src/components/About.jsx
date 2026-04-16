@@ -44,8 +44,8 @@ const About = () => {
               className="stat-card stat-card-link"
               ariaLabel="Open LeetCode profile"
             >
-              <span className="stat-number gradient-text">Active</span>
-              <p className="stat-label">On LeetCode</p>
+              <span className="stat-number gradient-text">3rd</span>
+              <p className="stat-label">Sangam University Hackathon 2026</p>
             </ExternalButton>
           </div>
         </div>

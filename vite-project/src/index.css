@@ -125,19 +125,29 @@ h5 {
   background: transparent;
   color: var(--primary);
   border: 1px solid var(--primary);
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   font-weight: 600;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  min-height: 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   font-family: var(--font-heading);
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .glow-btn:hover {
   background: var(--primary);
   color: var(--bg-darker);
   box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-1px);
 }
 
 button.glow-btn,
@@ -145,11 +155,16 @@ button.hero-btn-outline,
 button.hero-social-icon,
 button.social-icon,
 button.cert-btn,
-button.stat-card-link {
+button.stat-card-link,
+button.nav-menu-toggle,
+button.cert-toggle-btn,
+button.project-link-btn,
+button.projects-view-all-btn {
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
   font: inherit;
+  box-sizing: border-box;
 }
 
 button.glow-btn {

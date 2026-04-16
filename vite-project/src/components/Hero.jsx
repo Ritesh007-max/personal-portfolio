@@ -83,7 +83,7 @@ const Hero = () => {
                 <h1 className="hero-title">Building <span className="gradient-text">Things That Matter!</span></h1>
                 <div className="hero-buttons">
                     <Link to="/projects" className="glow-btn hero-btn">View Projects</Link>
-                    <ExternalButton href={resumeFile} className="hero-btn-outline">
+                    <ExternalButton href={resumeFile} className="glow-btn hero-btn-outline">
                         Download Resume
                     </ExternalButton>
                 </div>
