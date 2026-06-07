@@ -76,6 +76,7 @@ const Projects = () => {
             summary: 'A resume parsing prototype that extracts key candidate details and turns them into structured information for faster review.',
             contributors: ['Dhruv Ozha', 'Mahi Patel', 'Maharshi Patel'],
             live: 'https://iisc-hack.vercel.app/',
+            youtube: 'https://youtu.be/r8MHM2AQSB4?si=aCCWW4EPwOcecGXX',
             github: 'https://github.com/Ritesh007-max/IISC_Hack_ResumeParser'
         },
         {
@@ -85,7 +86,6 @@ const Projects = () => {
             summary: 'A crop guidance concept built around a simple digital workflow for exploring practical agricultural information.',
             contributors: ['Dhruv Ozha', 'Mahi Patel', 'Maharshi Patel'],
             live: 'https://croppilot-su.vercel.app/',
-            youtube: 'https://youtu.be/r8MHM2AQSB4?si=aCCWW4EPwOcecGXX',
             github: 'https://github.com/Ritesh007-max/SU_HACK_CropPiolet'
         },
         {
