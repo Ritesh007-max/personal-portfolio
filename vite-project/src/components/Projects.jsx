@@ -85,6 +85,7 @@ const Projects = () => {
             summary: 'A crop guidance concept built around a simple digital workflow for exploring practical agricultural information.',
             contributors: ['Dhruv Ozha', 'Mahi Patel', 'Maharshi Patel'],
             live: 'https://croppilot-su.vercel.app/',
+            youtube: 'https://youtu.be/r8MHM2AQSB4?si=aCCWW4EPwOcecGXX',
             github: 'https://github.com/Ritesh007-max/SU_HACK_CropPiolet'
         },
         {
@@ -94,6 +95,7 @@ const Projects = () => {
             summary: 'A modern fleet management dashboard for real-time transportation operations, with fleet utilization tracking, driver availability, dispatch control, expense analytics, maintenance logs, and a live manifest view.',
             contributors: ['Hemang Solanki', 'Mahi Patel', 'Maharshi Patel'],
             live: 'https://fleet-flow-coding-gita.netlify.app/',
+            youtube: 'https://youtu.be/qArH7NnjcG0?si=hcPm1a6939_7kFGE',
             github: 'https://github.com/Ritesh007-max/Fleet_Flow',
         }
     ];
