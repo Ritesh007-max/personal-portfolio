@@ -7,6 +7,7 @@ import rareImage from '../assets/SuperRareClone_.png';
 import resumeParserThumb from '../assets/hackathon-resume-parser.png';
 import cropPilotThumb from '../assets/Crop_Poilet.png';
 import fleetFlowThumb from '../assets/FleetFlow.jpeg';
+import vendorBridge from '../assets/vendorBridge.png';
 import ExternalButton from './ExternalButton';
 
 const Projects = () => {
@@ -78,6 +79,16 @@ const Projects = () => {
             live: 'https://iisc-hack.vercel.app/',
             youtube: 'https://youtu.be/r8MHM2AQSB4?si=aCCWW4EPwOcecGXX',
             github: 'https://github.com/Ritesh007-max/IISC_Hack_ResumeParser'
+        },
+        {
+            title: 'OdooXKsv hackathon Vendor Bridge',
+            tech: 'Vendor management, structured extraction',
+            image: vendorBridge,
+            summary: 'A vendor management prototype that extracts key vendor details and turns them into structured information for faster review.',
+            contributors: ['Hemang Singh', 'Mahi Patel', 'Priyank Khatri'],
+            live: 'https://odoo-x-ksv-hackathon-bice.vercel.app/',
+            youtube: 'https://www.youtube.com/watch?v=9-V5Ul5g_Ww',
+            github: 'https://github.com/Ritesh007-max/OdooXKsv-Hackathon'
         },
         {
             title: 'SU Hack Crop Pilot',
